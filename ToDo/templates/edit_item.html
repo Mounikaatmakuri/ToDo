@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Task</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Edit Task ID {{ item.id }}</h1>
+    <form method="POST">
+        Task: <input type="text" name="task" value="{{ item.Task }}" required><br><br>
+        Description: <input type="text" name="description" value="{{ item.description }}"><br><br>
+        <button type="submit">Update Task</button>
+    </form>
+    <a href="{{ url_for('view_items') }}">← Back to List</a>
+</body>
+</html>

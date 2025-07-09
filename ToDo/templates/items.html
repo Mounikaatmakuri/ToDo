@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Task List</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <a href="{{ url_for('home') }}">🏠 Home</a> | 
+    <a href="{{ url_for('create_item') }}">➕ Add Task</a>
+    <table border="1" cellpadding="5">
+        <tr><th>ID</th><th>Task</th><th>Description</th><th>Actions</th></tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.Task }}</td>
+            <td>{{ item.description }}</td>
+            <td>
+                <a href="{{ url_for('edit_item', item_id=item.id) }}">✏️ Edit</a>
+                <form action="{{ url_for('delete_item', item_id=item.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Delete this task?')">🗑️ Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

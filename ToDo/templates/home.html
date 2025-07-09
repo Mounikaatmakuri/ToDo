@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the To-Do App</h1>
+    <p><a href="{{ url_for('view_items') }}">📋 View Tasks</a></p>
+    <p><a href="{{ url_for('create_item') }}">➕ Add New Task</a></p>
+</body>
+</html>
