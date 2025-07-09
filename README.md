@@ -28,6 +28,7 @@ This is a simple web-based To-Do List application built using **Python Flask**. 
 
 project/
 │
+
 ├── app.py
 
 ├── static/
